@@ -48,6 +48,7 @@ async function loadBook(fileName, displayName) {
 //get specific book
 async function getBook(url) {
     const response = await fetch(url);
+    console.log(response.text());
     return response.text();
 }
 
