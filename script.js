@@ -36,7 +36,6 @@ async function loadBook(fileName, displayName) {
     fileContent.innerHTML = '';
     let url = `/books/${fileName}`;
     currentBook = await getBook(url);
-    console.log(currentBook);
     //the next regular expression will look for line breaks, carriage returns,
     //and replace them with <br>.
     let modifiedBook = currentBook.replace(/(?:\r\n|\r|\n)/g, '<br>');
