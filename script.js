@@ -123,12 +123,11 @@ function sortArray(obj) {
 //search the text file and mark every single word that matches the search value
 function searchWord() {
     const keyword = document.getElementById('keyword').value;
-
     if (currentBook == '' || keyword == '') {
         return;
     }
 
-    //get all the elements with id markme and change it to its innerHTML
+    //get all the elements with id markme and change it to its innerHTML (removing the spans)
     const marks = document.querySelectorAll('#markme');
     if (marks.length != 0) {
         marks.forEach((el) => {
@@ -140,9 +139,9 @@ function searchWord() {
     const newFileContent = fileContent.innerHTML.replaceAll(re, '<span id="markme" style="background:yellow;color:red">$&</span>');
     fileContent.innerHTML = newFileContent;
     const marksCount = document.querySelectorAll('#markme').length;
-    // console.log()
     searchStat.textContent = `found: ${marksCount} times`;
     if (marksCount > 0) {
+        //scroll to the first span with the id markme
         document.getElementById('markme').scrollIntoView();
     }
 }
