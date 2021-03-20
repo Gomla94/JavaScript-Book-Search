@@ -42,7 +42,7 @@ async function loadBook(fileName, displayName) {
     let modifiedBook = currentBook.replace(/(?:\r\n|\r|\n)/g, '<br>');
     fileContent.innerHTML = modifiedBook;
     fileContent.scrollTop = 0;
-
+    searchStat.textContent = '';
     getStats(currentBook);
 }
 
